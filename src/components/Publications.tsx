@@ -7,7 +7,7 @@ function Publications() {
     <section id="publications" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="05" title="Publications & Talks" />
+          <SectionHeading title="Publications & Talks" />
         </Reveal>
         <div className="publications-list">
           {publications.map((entry, index) => (

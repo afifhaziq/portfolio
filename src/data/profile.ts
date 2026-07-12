@@ -5,7 +5,7 @@ export const profile = {
   email: 'afifhaziq3078@gmail.com',
   github: 'https://github.com/afifhaziq',
   summary:
-    'I build and secure the systems that keep networks trustworthy — from AI-powered compliance tooling used across a national regulator, to lightweight machine learning models that classify encrypted traffic on edge hardware. My work sits at the intersection of network security, applied ML, and production infrastructure.',
+    'I build and secure the systems that keep networks trustworthy from Agentic AI used across a national regulator, to lightweight machine learning models that classify encrypted traffic on edge hardware. My work sits at the intersection of network security, applied ML, and production infrastructure.',
 }
 
 export interface EducationEntry {

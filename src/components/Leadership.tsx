@@ -7,7 +7,7 @@ function Leadership() {
     <section id="leadership" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="06" title="Leadership & Community" />
+          <SectionHeading title="Leadership & Community" />
         </Reveal>
         <div className="leadership-grid">
           {leadership.map((entry, index) => (
