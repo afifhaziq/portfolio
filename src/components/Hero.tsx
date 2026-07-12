@@ -15,10 +15,7 @@ function Hero() {
         <h1 className="hero-name">{profile.name}</h1>
         <p className="hero-summary">{profile.summary}</p>
         <div className="hero-ctas">
-          <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noreferrer" className="btn btn-primary">
-            Download Resume
-          </a>
-          <a href="#contact" className="btn btn-outline">
+          <a href="#contact" className="btn btn-primary">
             Get in Touch
           </a>
         </div>
