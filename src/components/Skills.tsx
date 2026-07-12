@@ -7,11 +7,11 @@ function Skills() {
     <section id="skills" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="04" title="Skills" />
+          <SectionHeading title="Skills" />
         </Reveal>
         <div className="skills-grid">
           {skills.map((group, index) => (
-            <Reveal key={group.category} delay={index * 0.08}>
+            <Reveal key={group.category} delay={index * 0.08} className="card">
               <div className="skill-group-title">{group.category}</div>
               <div className="skill-pills">
                 {group.items.map((item) => (

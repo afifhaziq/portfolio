@@ -7,7 +7,7 @@ function Certifications() {
     <section id="certifications" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="07" title="Certifications" />
+          <SectionHeading title="Certifications" />
         </Reveal>
         <div className="certifications-grid">
           {certifications.map((cert, index) => (

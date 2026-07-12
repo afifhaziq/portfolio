@@ -22,7 +22,7 @@
 }
 
 .nav-logo span {
-  color: var(--color-accent-teal);
+  color: var(--color-accent-blue);
 }
 
 .nav-links {
@@ -39,21 +39,21 @@
 }
 
 .nav-links a:hover {
-  color: var(--color-accent-teal);
+  color: var(--color-accent-blue);
 }
 
 .nav-toggle {
   display: none;
   background: none;
   border: 1px solid var(--color-border-100);
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   color: var(--color-text-900);
   padding: 8px 10px;
 }
 
 .nav-mobile-panel {
   display: none;
-  background: rgb(14 20 22 / 96%);
+  background: rgb(5 5 6 / 96%);
   backdrop-filter: blur(8px);
 }
 
@@ -114,14 +114,14 @@
   font-family: var(--font-mono);
   font-size: 1.7rem;
   font-weight: 500;
-  color: var(--color-accent-teal);
+  color: var(--color-text-1000);
   flex-shrink: 0;
   margin-bottom: 28px;
 }
 
 .hero-role {
   font-family: var(--font-mono);
-  color: var(--color-accent-teal);
+  color: var(--color-text-600);
   font-size: 1rem;
   margin-bottom: 18px;
 }
@@ -174,9 +174,9 @@
   gap: 18px;
 }
 
-.education-item {
-  border-left: 2px solid var(--color-border-100);
-  padding-left: 18px;
+.education-item + .education-item {
+  border-top: 1px solid var(--color-border-100);
+  padding-top: 18px;
 }
 
 .education-degree {
@@ -223,7 +223,7 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--color-accent-teal);
+  background: var(--color-accent-blue);
 }
 
 .timeline-period {
@@ -238,7 +238,7 @@
 }
 
 .timeline-org {
-  color: var(--color-accent-teal);
+  color: var(--color-text-700);
   font-size: 0.95rem;
   margin-bottom: 4px;
 }
@@ -289,6 +289,15 @@
   gap: 1.5rem;
 }
 
+.project-card-wrap {
+  display: flex;
+  height: 100%;
+}
+
+.project-card .border-glow-inner {
+  padding: 1.75rem;
+}
+
 .project-card-period {
   font-family: var(--font-mono);
   font-size: 0.78rem;
@@ -324,7 +333,7 @@
 .skill-group-title {
   font-family: var(--font-mono);
   font-size: 0.85rem;
-  color: var(--color-accent-teal);
+  color: var(--color-text-600);
   margin-bottom: 14px;
 }
 
@@ -427,15 +436,15 @@
   font-family: var(--font-mono);
   font-size: 0.9rem;
   padding: 12px 20px;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--color-border-100);
   color: var(--color-text-900);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
 
 .contact-pill:hover {
-  border-color: var(--color-accent-teal);
-  color: var(--color-accent-teal);
+  border-color: var(--color-accent-blue);
+  color: var(--color-accent-blue);
 }
 
 /* Footer */
@@ -460,5 +469,5 @@
 }
 
 .footer-inner a:hover {
-  color: var(--color-accent-teal);
+  color: var(--color-accent-blue);
 }

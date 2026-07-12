@@ -6,7 +6,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <GradientWrapper variant="colorful" direction="up" height={280} />
+      <GradientWrapper direction="up" height={280} />
       <div className="container footer-inner">
         <span>© {year} {profile.name}</span>
         <a href="#top">Back to top ↑</a>

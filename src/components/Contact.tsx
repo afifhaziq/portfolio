@@ -7,7 +7,7 @@ function Contact() {
     <section id="contact" className="section">
       <div className="container contact-layout">
         <Reveal>
-          <SectionHeading index="08" title="Contact" />
+          <SectionHeading title="Contact" />
         </Reveal>
         <Reveal delay={0.1}>
           <p className="about-bio">

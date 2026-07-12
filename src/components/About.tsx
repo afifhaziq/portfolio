@@ -7,7 +7,7 @@ function About() {
     <section id="about" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="01" title="About" />
+          <SectionHeading title="About" />
         </Reveal>
         <Reveal delay={0.1} className="about-layout">
           <p className="about-bio">{profile.summary}</p>
