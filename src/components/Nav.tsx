@@ -25,9 +25,6 @@ function Nav() {
               {link.label}
             </a>
           ))}
-          <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noreferrer" className="btn btn-outline btn-sm">
-            Resume
-          </a>
         </nav>
         <button
           type="button"
@@ -46,9 +43,6 @@ function Nav() {
               {link.label}
             </a>
           ))}
-          <a href={`${import.meta.env.BASE_URL}resume.pdf`} target="_blank" rel="noreferrer">
-            Resume
-          </a>
         </div>
       )}
     </header>
