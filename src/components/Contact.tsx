@@ -1,5 +1,6 @@
 import SectionHeading from './SectionHeading'
 import Reveal from './Reveal'
+import CopyCommand from './CopyCommand'
 import { profile } from '../data/profile'
 
 function Contact() {
@@ -7,21 +8,21 @@ function Contact() {
     <section id="contact" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="08" title="Contact" />
+          <SectionHeading index="08" title="Contact" note="OPEN CHANNEL" />
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="contact-intro">
-            Open to conversations about network security, applied ML, and research collaborations. Reach out
-            through any of the channels below.
-          </p>
-        </Reveal>
-        <Reveal delay={0.2} className="contact-links">
-          <a className="contact-email" href={`mailto:${profile.email}`}>
-            {profile.email}
-          </a>
-          <a className="link" href={profile.github} target="_blank" rel="noreferrer">
-            GitHub — @afifhaziq
-          </a>
+          <div className="ready-panel">
+            <p className="ready-status">
+              <span className="ready-dot" aria-hidden="true">●</span> READY
+            </p>
+            <p className="ready-text">
+              Open to conversations about network security, applied ML, and research collaborations.
+            </p>
+            <CopyCommand copyText={profile.email} display={`mail ${profile.email}`} />
+            <a className="cmd-link" href={profile.github} target="_blank" rel="noreferrer">
+              <span aria-hidden="true">$ </span>open github.com/afifhaziq <span aria-hidden="true">↗</span>
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>
