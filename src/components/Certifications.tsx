@@ -9,14 +9,16 @@ function Certifications() {
         <Reveal>
           <SectionHeading index="07" title="Certifications" />
         </Reveal>
-        <div className="certifications-grid">
+        <ul className="entry-list">
           {certifications.map((cert, index) => (
-            <Reveal key={cert.name} delay={index * 0.05} className="card">
-              <div className="cert-name">{cert.name}</div>
-              <div className="cert-issuer">{cert.issuer}</div>
-            </Reveal>
+            <li key={cert.name}>
+              <Reveal delay={index * 0.04} className="entry-row">
+                <span className="entry-primary">{cert.name}</span>
+                <span className="entry-secondary">{cert.issuer}</span>
+              </Reveal>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )

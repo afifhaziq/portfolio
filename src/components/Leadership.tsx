@@ -9,14 +9,16 @@ function Leadership() {
         <Reveal>
           <SectionHeading index="06" title="Leadership & Community" />
         </Reveal>
-        <div className="leadership-grid">
+        <ul className="entry-list">
           {leadership.map((entry, index) => (
-            <Reveal key={entry.role} delay={index * 0.06} className="card leadership-item">
-              <div className="leadership-role">{entry.role}</div>
-              <div className="leadership-org">{entry.org}</div>
-            </Reveal>
+            <li key={entry.role}>
+              <Reveal delay={index * 0.05} className="entry-row">
+                <span className="entry-primary">{entry.role}</span>
+                <span className="entry-secondary">{entry.org}</span>
+              </Reveal>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )

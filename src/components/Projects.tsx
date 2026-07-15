@@ -7,21 +7,25 @@ function Projects() {
     <section id="projects" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="03" title="Projects" />
+          <SectionHeading index="03" title="Selected Projects" />
         </Reveal>
-        <div className="projects-grid">
+        <div className="project-list">
           {projects.map((project, index) => (
-            <Reveal key={project.title} delay={index * 0.08} className="card">
-              <div className="project-card-period">{project.period}</div>
-              <h3 className="project-card-title">{project.title}</h3>
-              <p className="project-card-desc">{project.description}</p>
-              <div className="project-card-tags">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
+            <Reveal key={project.title} delay={index * 0.06}>
+              <article className="project-entry">
+                <div className="project-entry-meta">{project.period}</div>
+                <div className="project-entry-body">
+                  <h3 className="project-entry-title">{project.title}</h3>
+                  <p className="project-entry-desc">{project.description}</p>
+                  <ul className="tag-row">
+                    {project.tags.map((tag) => (
+                      <li key={tag} className="tag">
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
             </Reveal>
           ))}
         </div>

@@ -1,32 +1,28 @@
 :root {
-  --color-bg: #0e1416;
-  --color-bg-raised: #141b1e;
-  --color-accent-red: #eb1700;
-  --color-accent-teal: #44edbc;
+  /* Warm off-white paper + near-black ink */
+  --color-bg: #faf8f5;
+  --color-bg-subtle: #f2eee6;
 
-  --color-text-1000: rgb(255 255 255 / 100%);
-  --color-text-900: rgb(255 255 255 / 90%);
-  --color-text-800: rgb(255 255 255 / 80%);
-  --color-text-700: rgb(255 255 255 / 70%);
-  --color-text-600: rgb(255 255 255 / 60%);
-  --color-text-500: rgb(255 255 255 / 50%);
-  --color-text-400: rgb(255 255 255 / 40%);
-  --color-text-300: rgb(255 255 255 / 30%);
-  --color-text-200: rgb(255 255 255 / 20%);
-  --color-text-100: rgb(255 255 255 / 10%);
+  --ink: #1a1712;
+  --ink-2: #3b362e;
+  --ink-3: #5d564b;
+  --ink-4: #8a8272;
 
-  --color-border-100: rgb(255 255 255 / 10%);
-  --color-border-50: rgb(255 255 255 / 5%);
+  /* One restrained accent — deep green */
+  --accent: #1f513f;
+  --accent-hover: #2c6e53;
 
-  --font-sans: 'DM Sans', system-ui, sans-serif;
-  --font-mono: 'DM Mono', ui-monospace, monospace;
+  --hairline: rgb(26 23 18 / 12%);
+  --hairline-strong: rgb(26 23 18 / 24%);
 
-  --max-width: 1200px;
-  --section-padding-y: clamp(4.5rem, 10vw, 9rem);
-  --radius-card: 12px;
-  --radius-btn: 12px;
+  --font-serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 
-  color-scheme: dark;
+  --max-width: 1080px;
+  --measure: 68ch;
+  --section-padding-y: clamp(3.5rem, 8vw, 6.5rem);
+
+  color-scheme: light;
 }
 
 * {
@@ -35,35 +31,33 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 88px;
+  scroll-padding-top: 84px;
 }
 
 body {
   margin: 0;
   background: var(--color-bg);
-  color: var(--color-text-900);
+  color: var(--ink-2);
   font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  text-rendering: optimizeLegibility;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-sans);
-  font-weight: 500;
-  color: var(--color-text-1000);
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  color: var(--ink);
   margin: 0;
-  line-height: 1.15;
-}
-
-h1 {
-  font-weight: 300;
-  letter-spacing: -0.02em;
+  line-height: 1.12;
+  letter-spacing: -0.01em;
 }
 
 p {
@@ -75,7 +69,8 @@ a {
   text-decoration: none;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -92,9 +87,19 @@ button {
   cursor: pointer;
 }
 
+cite {
+  font-style: normal;
+}
+
 ::selection {
-  background: var(--color-accent-teal);
+  background: var(--accent);
   color: var(--color-bg);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* Layout primitives */
@@ -103,7 +108,7 @@ button {
   width: 100%;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
   position: relative;
 }
 
@@ -112,133 +117,88 @@ button {
   position: relative;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.05em;
-  color: var(--color-accent-teal);
-  margin-bottom: 12px;
-}
+/* Numbered section labels + serif titles, over a hairline rule */
 
 .section-heading {
-  margin-bottom: 2.5rem;
+  border-top: 1px solid var(--hairline-strong);
+  padding-top: 1.35rem;
+  margin-bottom: 2.75rem;
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.85rem;
 }
 
 .section-title {
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+}
+
+/* Understated links */
+
+.link {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.link:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}
+
+.link-cta {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
   font-weight: 500;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease;
 }
 
-/* Card */
-
-.card {
-  background: var(--color-bg-raised);
-  border: 1px solid var(--color-border-100);
-  border-radius: var(--radius-card);
-  padding: 1.75rem;
+.link-cta:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
 }
 
-/* Tags */
+/* Understated tag chips */
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
 
 .tag {
   display: inline-flex;
   align-items: center;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--color-text-700);
-  border: 1px solid var(--color-border-100);
-  border-radius: 999px;
-  padding: 4px 12px;
-}
-
-.tag--accent {
-  color: var(--color-accent-teal);
-  border-color: rgb(68 237 188 / 30%);
-  background: rgb(68 237 188 / 8%);
-}
-
-/* Buttons — mirrors mlflow's cva variants: primary (white/black),
-   outline (white border, transparent), secondary (black) */
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
   font-family: var(--font-sans);
-  font-size: 0.95rem;
-  font-weight: 500;
-  padding: 14px 24px;
-  border-radius: var(--radius-btn);
-  border: 1px solid transparent;
-  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
-}
-
-.btn-sm {
-  padding: 8px 16px;
-  font-size: 0.85rem;
-}
-
-.btn-primary {
-  background: var(--color-text-1000);
-  color: var(--color-bg);
-}
-
-.btn-primary:hover {
-  background: var(--color-text-900);
-}
-
-.btn-outline {
-  border-color: var(--color-text-1000);
-  color: var(--color-text-1000);
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  color: var(--ink-3);
+  border: 1px solid var(--hairline);
+  border-radius: 100px;
+  padding: 0.2rem 0.7rem;
   background: transparent;
-}
-
-.btn-outline:hover {
-  background: var(--color-text-1000);
-  color: var(--color-bg);
-}
-
-.btn-secondary {
-  background: #000;
-  color: var(--color-text-1000);
-  border-color: var(--color-border-100);
-}
-
-.btn-secondary:hover {
-  background: rgb(0 0 0 / 80%);
-}
-
-/* Gradient-bar background (mlflow's signature hero/section wash).
-   Colors, background-image, and mask-image are set inline per variant —
-   see GradientWrapper.tsx, ported from mlflow-website's source. */
-
-.gradient-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-color: var(--color-bg);
-}
-
-.gradient-wrapper--down {
-  top: 0;
-}
-
-.gradient-wrapper--up {
-  bottom: 0;
 }
 
 /* Scroll-entrance motion */
 
 .reveal {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
 }
 
 .reveal-visible {
@@ -247,6 +207,10 @@ button {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .reveal {
     opacity: 1;
     transform: none;
@@ -256,6 +220,10 @@ button {
 
 @media (max-width: 640px) {
   .container {
-    padding: 0 18px;
+    padding: 0 22px;
+  }
+
+  body {
+    font-size: 16px;
   }
 }

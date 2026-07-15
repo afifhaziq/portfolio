@@ -17,9 +17,9 @@ function Nav() {
     <header className="nav">
       <div className="container nav-inner">
         <a href="#top" className="nav-logo">
-          {profile.initials}<span>.</span>
+          {profile.name}<span className="nav-logo-dot">.</span>
         </a>
-        <nav className="nav-links desktop">
+        <nav className="nav-links desktop" aria-label="Primary">
           {LINKS.map((link) => (
             <a key={link.href} href={link.href}>
               {link.label}
@@ -33,7 +33,7 @@ function Nav() {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? '✕' : '☰'}
+          {open ? 'Close' : 'Menu'}
         </button>
       </div>
       {open && (
