@@ -13,6 +13,7 @@ import Footer from './components/Footer'
 function App() {
   return (
     <>
+      <div className="bg-mesh" aria-hidden="true" />
       <Nav />
       <main>
         <Hero />
