@@ -9,23 +9,25 @@ function Experience() {
         <Reveal>
           <SectionHeading index="02" title="Experience" />
         </Reveal>
-        <div className="timeline">
-          {experience.map((entry, index) => (
-            <Reveal key={entry.role + entry.org} delay={index * 0.1} className="timeline-item">
-              <div className="timeline-period">{entry.period}</div>
-              <div>
-                <div className="timeline-role">{entry.role}</div>
-                <div className="timeline-org">{entry.org}</div>
-                <div className="timeline-location">{entry.location}</div>
-                <ul className="timeline-bullets">
+        <Reveal delay={0.05} className="xp-table">
+          {experience.map((entry) => (
+            <div key={entry.role + entry.org} className="xp-row">
+              <div className="xp-meta">
+                <span className="xp-period">{entry.period}</span>
+                <div className="xp-location">{entry.location}</div>
+              </div>
+              <div className="xp-body">
+                <h3 className="xp-role">{entry.role}</h3>
+                <div className="xp-org">{entry.org}</div>
+                <ul className="xp-bullets">
                   {entry.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
               </div>
-            </Reveal>
+            </div>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   )
