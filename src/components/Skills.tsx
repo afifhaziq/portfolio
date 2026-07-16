@@ -9,10 +9,10 @@ function Skills() {
         <Reveal>
           <SectionHeading index="04" title="Skills" />
         </Reveal>
-        <Reveal delay={0.05} className="skills-table">
-          {skills.map((group) => (
-            <div key={group.category} className="skill-row">
-              <div className="skill-cat">{group.category}</div>
+        <div className="skills-grid">
+          {skills.map((group, index) => (
+            <Reveal key={group.category} delay={index * 0.08}>
+              <div className="skill-group-title">{group.category}</div>
               <div className="skill-pills">
                 {group.items.map((item) => (
                   <span key={item} className="tag">
@@ -20,9 +20,9 @@ function Skills() {
                   </span>
                 ))}
               </div>
-            </div>
+            </Reveal>
           ))}
-        </Reveal>
+        </div>
       </div>
     </section>
   )

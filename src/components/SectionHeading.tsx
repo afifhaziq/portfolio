@@ -6,9 +6,7 @@ interface SectionHeadingProps {
 function SectionHeading({ index, title }: SectionHeadingProps) {
   return (
     <div className="section-heading">
-      <span className="section-index" aria-hidden="true">
-        {index}
-      </span>
+      <div className="eyebrow">{index}</div>
       <h2 className="section-title">{title}</h2>
     </div>
   )

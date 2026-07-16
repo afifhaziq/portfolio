@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { profile } from '../data/profile'
 
 const LINKS = [
@@ -10,32 +10,16 @@ const LINKS = [
   { href: '#contact', label: 'Contact' },
 ]
 
-// The full-screen mobile menu surfaces every section, including the two
-// (Leadership, Certifications) the compact desktop bar deliberately omits.
-const MOBILE_LINKS = [
-  ...LINKS.slice(0, 5),
-  { href: '#leadership', label: 'Leadership' },
-  { href: '#certifications', label: 'Certifications' },
-  { href: '#contact', label: 'Contact' },
-]
-
 function Nav() {
   const [open, setOpen] = useState(false)
-
-  useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
-    }
-  }, [open])
 
   return (
     <header className="nav">
       <div className="container nav-inner">
-        <a href="#top" className="nav-logo" aria-label={`${profile.name} — home`}>
-          {profile.initials}
+        <a href="#top" className="nav-logo">
+          {profile.initials}<span>.</span>
         </a>
-        <nav className="nav-links desktop" aria-label="Primary">
+        <nav className="nav-links desktop">
           {LINKS.map((link) => (
             <a key={link.href} href={link.href}>
               {link.label}
@@ -49,17 +33,17 @@ function Nav() {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          {open ? 'Close ✕' : 'Menu ☰'}
+          {open ? '✕' : '☰'}
         </button>
       </div>
       {open && (
-        <nav className="nav-mobile-panel" aria-label="Mobile">
-          {MOBILE_LINKS.map((link) => (
+        <div className="container nav-mobile-panel">
+          {LINKS.map((link) => (
             <a key={link.href} href={link.href} onClick={() => setOpen(false)}>
               {link.label}
             </a>
           ))}
-        </nav>
+        </div>
       )}
     </header>
   )
