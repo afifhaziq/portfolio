@@ -2,24 +2,28 @@ import SectionHeading from './SectionHeading'
 import Reveal from './Reveal'
 import { skills } from '../data/skills'
 
+const pad = (n: number) => String(n).padStart(2, '0')
+
 function Skills() {
   return (
     <section id="skills" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="04" title="Skills" />
+          <SectionHeading index="04" title="Skills" note="TOOLCHAIN" />
         </Reveal>
-        <div className="skills-grid">
+        <div className="skills-stack">
           {skills.map((group, index) => (
-            <Reveal key={group.category} delay={index * 0.08}>
-              <div className="skill-group-title">{group.category}</div>
-              <div className="skill-pills">
+            <Reveal key={group.category} delay={index * 0.05} className="skill-group">
+              <h3 className="block-label">
+                {pad(index + 1)} <span className="eyebrow-slashes">{'//'}</span> {group.category.toUpperCase()}
+              </h3>
+              <ul className="chip-row">
                 {group.items.map((item) => (
-                  <span key={item} className="tag">
+                  <li key={item} className="chip">
                     {item}
-                  </span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </Reveal>
           ))}
         </div>

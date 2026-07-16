@@ -2,21 +2,28 @@ import SectionHeading from './SectionHeading'
 import Reveal from './Reveal'
 import { certifications } from '../data/certifications'
 
+const pad = (n: number) => String(n).padStart(2, '0')
+
 function Certifications() {
   return (
     <section id="certifications" className="section">
       <div className="container">
         <Reveal>
-          <SectionHeading index="07" title="Certifications" />
+          <SectionHeading index="07" title="Certifications" note="VERIFIED" />
         </Reveal>
-        <div className="certifications-grid">
+        <ul className="spec-table">
           {certifications.map((cert, index) => (
-            <Reveal key={cert.name} delay={index * 0.05} className="card">
-              <div className="cert-name">{cert.name}</div>
-              <div className="cert-issuer">{cert.issuer}</div>
-            </Reveal>
+            <li key={cert.name}>
+              <Reveal delay={index * 0.03} className="spec-row">
+                <span className="row-index" aria-hidden="true">
+                  {pad(index + 1)}
+                </span>
+                <span className="spec-primary">{cert.name}</span>
+                <span className="spec-secondary">{cert.issuer}</span>
+              </Reveal>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   )
