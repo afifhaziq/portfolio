@@ -11,7 +11,7 @@ function Projects() {
         </Reveal>
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <Reveal key={project.title} delay={index * 0.08} className="card">
+            <Reveal key={project.title} delay={index * 0.08} className="project-card card card--hover">
               <div className="project-card-period">{project.period}</div>
               <h3 className="project-card-title">{project.title}</h3>
               <p className="project-card-desc">{project.description}</p>

@@ -10,10 +10,10 @@ function About() {
           <SectionHeading index="01" title="About" />
         </Reveal>
         <Reveal delay={0.1} className="about-layout">
-          <p className="about-bio">{profile.summary}</p>
+          <p className="about-bio card">{profile.summary}</p>
           <div className="education-list">
             {education.map((entry) => (
-              <div key={entry.degree} className="education-item">
+              <div key={entry.degree} className="education-item card card--hover">
                 <div className="education-degree">{entry.degree}</div>
                 <div className="education-meta">
                   {entry.school} · {entry.period}

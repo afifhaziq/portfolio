@@ -11,7 +11,7 @@ function Leadership() {
         </Reveal>
         <div className="leadership-grid">
           {leadership.map((entry, index) => (
-            <Reveal key={entry.role} delay={index * 0.06} className="card leadership-item">
+            <Reveal key={entry.role} delay={index * 0.06} className="leadership-item card card--hover">
               <div className="leadership-role">{entry.role}</div>
               <div className="leadership-org">{entry.org}</div>
             </Reveal>

@@ -11,7 +11,7 @@ function Skills() {
         </Reveal>
         <div className="skills-grid">
           {skills.map((group, index) => (
-            <Reveal key={group.category} delay={index * 0.08}>
+            <Reveal key={group.category} delay={index * 0.08} className="skill-card card card--hover">
               <div className="skill-group-title">{group.category}</div>
               <div className="skill-pills">
                 {group.items.map((item) => (

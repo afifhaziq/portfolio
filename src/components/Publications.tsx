@@ -11,7 +11,7 @@ function Publications() {
         </Reveal>
         <div className="publications-list">
           {publications.map((entry, index) => (
-            <Reveal key={entry.title} delay={index * 0.08} className="card publication-item">
+            <Reveal key={entry.title} delay={index * 0.08} className="publication-item card card--hover">
               <div>
                 <div className="publication-title">{entry.title}</div>
                 <div className="publication-venue">

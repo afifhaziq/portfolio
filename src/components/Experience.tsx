@@ -11,7 +11,7 @@ function Experience() {
         </Reveal>
         <div className="timeline">
           {experience.map((entry, index) => (
-            <Reveal key={entry.role + entry.org} delay={index * 0.1} className="timeline-item">
+            <Reveal key={entry.role + entry.org} delay={index * 0.1} className="timeline-item card card--hover">
               <div className="timeline-period">{entry.period}</div>
               <div>
                 <div className="timeline-role">{entry.role}</div>

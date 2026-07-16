@@ -11,7 +11,7 @@ function Certifications() {
         </Reveal>
         <div className="certifications-grid">
           {certifications.map((cert, index) => (
-            <Reveal key={cert.name} delay={index * 0.05} className="card">
+            <Reveal key={cert.name} delay={index * 0.05} className="cert-card card card--hover">
               <div className="cert-name">{cert.name}</div>
               <div className="cert-issuer">{cert.issuer}</div>
             </Reveal>
